@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Prosto+One&family=Roboto+Mono&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(178, 178, 249);
+}
+
+.main {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    perspective: 1000px;
+}
+
+.flipcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 52, 0.74);
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+}
+
+.cardfront {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: visible;
+}
+
+.main:hover .flipcard {
+    transform: rotateY(180deg);
+}
+
+.img {
+    width: 395px;
+    height: 250px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.content {
+    width: 380px;
+    height: 250px;
+    display: block;
+    justify-content: space-between;
+}
+
+.cont1 {
+    display: flex;
+    justify-content: space-between;
+    line-height: 60px;
+    font-size: 20px;
+    font-family: 'Prosto One', cursive;
+}
+
+.name {
+    padding-left: 5px;
+}
+
+.energy {
+    padding-right: 5px;
+}
+
+.char {
+    margin-left: 170px;
+    font-size: 20px;
+    font-family: 'Prosto One', cursive;
+}
+
+.cardback {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+.cardback {
+    transform: rotateY(180deg);
+}
+
+.img1 {
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+/* responsiveness */
+
+@media(max-width:576px) {
+    .main {
+        width: 300px;
+        height: 400px;
+    }
+
+    .img {
+        width: 290px;
+        height: 150px;
+    }
+
+    .content {
+        width: 300px;
+        height: 250px;
+    }
+
+    .img1 {
+        width: 300px;
+        height: 400px;
+    }
+}
